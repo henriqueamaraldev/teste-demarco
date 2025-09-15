@@ -1,0 +1,50 @@
+# Arquivos de build
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+
+# Arquivos de controle de versão
+.git/
+.gitignore
+.gitattributes
+
+# Arquivos de IDE
+.vs/
+.vscode/
+*.sln.docstates
+
+# Arquivos de configuração local
+appsettings.Development.json
+appsettings.Local.json
+*.Development.json
+
+# Arquivos de teste
+Tests/
+**/Tests/
+**/*.Tests/
+
+# Arquivos temporários
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Azure DevOps
+azure-pipelines.yml

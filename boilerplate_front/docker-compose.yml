@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  angular-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.local-development
+    ports:
+      - "4200:4200" # Mapeia a porta do Angular para o host
+    volumes:
+      - .:/app # Monta o diretório local como volume no container
+      - /app/node_modules # Evita conflitos do volume com o node_modules local
+    stdin_open: true # Mantém o terminal aberto
+    tty: true # Permite interação com o terminal no container

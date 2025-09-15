@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: mongodb-clientes
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: ClientesDB
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - clientes-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  mongodb_data:
+    driver: local
+
+networks:
+  clientes-network:
+    driver: bridge

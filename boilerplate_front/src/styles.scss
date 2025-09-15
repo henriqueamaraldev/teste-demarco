@@ -1,0 +1,239 @@
+@import "primeicons/primeicons.css";
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.p-dialog-mask {
+  z-index: 1050; /* Garante que o overlay fique acima de todos os componentes */
+  background-color: rgba(0, 0, 0, 0.5); /* Torna o fundo escuro */
+}
+
+.p-dialog-content {
+  overflow: visible;
+}
+
+.p-inputtext {
+  min-width: unset;
+}
+
+#CREATE-AI-QUIZZ,
+#PUBLISH-PAGE .p-inputtext {
+  width: 90px;
+}
+
+#YOUTUBE-URL .p-inputtext {
+  width: 100%;
+}
+
+/* Estilização da Scrollbar no Webkit */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Deixa o fundo transparente */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Oculta a scrollbar por padrão */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Torna visível apenas ao passar o mouse */
+.custom-scroll:hover ::-webkit-scrollbar-thumb {
+  opacity: 1;
+}
+
+/* Mantém visível ao rolar */
+.custom-scroll::-webkit-scrollbar-thumb:active {
+  opacity: 1;
+}
+
+@layer tailwind-base, primeng, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading;
+}
+
+:root {
+  --p-stepper-steppanels-padding: 0;
+
+  --p-tag-primary-background: #2d2e77;
+  --p-tag-primary-color: white;
+
+  --p-tag-secondary-background: #5daf7c;
+  --p-tag-secondary-color: white;
+
+  --p-tag-success-background: #22c55e;
+  --p-tag-success-color: white;
+
+  --p-tag-info-background: #0ea5e9;
+  --p-tag-info-color: white;
+
+  --p-tag-warn-background: #f97316;
+  --p-tag-warn-color: white;
+
+  --p-tag-danger-background: #ef4444;
+  --p-tag-danger-color: white;
+
+  --p-tag-contrast-background: #e5e7eb;
+  --p-tag-contrast-color: white;
+
+  --p-tag-font-size: 12px;
+
+  --p-drawer-content-padding: 0;
+
+  --p-progressspinner-color-1: #2d2e77;
+  --p-progressspinner-color-2: #0b1846;
+  --p-progressspinner-color-3: #2d2e77;
+  --p-progressspinner-color-4: #0b1846;
+}
+
+.joyride-backdrop {
+  background-color: #000000cb !important;
+  backdrop-filter: blur(2px);
+}
+
+.joyride-step__container {
+  padding: 16px !important;
+  height: auto !important;
+  border-radius: 12px;
+  box-shadow: 0 0 30px 1px #00000044 !important;
+  gap: 16px;
+}
+
+.joyride-step__header {
+  padding: 0 !important;
+}
+
+.joyride-step__body {
+  padding: 0 !important;
+  color: #111928;
+}
+
+.joyride-step__close {
+  top: 16px !important;
+  right: 16px !important;
+}
+
+.joyride-step__counter {
+  color: #5a6476;
+}
+
+.joyride-button {
+  border-radius: 6px;
+}
+
+.joyride-button:hover {
+  color: #fff !important;
+  background-color: #212147 !important;
+}
+
+/* Custom styles for auth pages */
+.auth-input {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.auth-input:focus {
+  @apply ring-2 ring-indigo-500 ring-opacity-50 border-indigo-500;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+.auth-button {
+  @apply transition-all duration-200 ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.auth-button:hover::before {
+  left: 100%;
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* Glassmorphism effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Floating animation for background elements */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.floating:nth-child(3) {
+  animation-delay: 4s;
+}
+
+/* Custom scrollbar for auth pages */
+.auth-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.auth-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.auth-scroll::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 2px;
+}
+
+.auth-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.5);
+}

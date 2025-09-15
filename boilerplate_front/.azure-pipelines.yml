@@ -1,0 +1,22 @@
+trigger:
+  branches:
+    include:
+      - "*" # dispara em qualquer branch
+
+pool:
+  vmImage: "ubuntu-latest"
+
+steps:
+  - checkout: self
+    persistCredentials: true
+
+  - script: |
+      git config --global user.email "bot@azuredevops.local"
+      git config --global user.name "Azure DevOps Mirror Bot"
+
+      # Adiciona remoto do GitHub usando PAT
+      git remote add github https://$(GITHUB_USER):$(GITHUB_PAT)@github.com/codekillerss/boilerplate_front.git
+
+      # Faz push espelhado (todas as branches e tags)
+      git push --mirror github
+    displayName: "Mirror Azure → GitHub"

@@ -1,0 +1,74 @@
+<!-- Modal Header -->
+<div class="flex items-center justify-between mb-6">
+  <h2 class="text-2xl font-bold text-gray-900">Criar Novo Cliente</h2>
+  <button
+    type="button"
+    class="text-gray-400 hover:text-gray-600 transition-colors"
+    (click)="cancelar()"
+  >
+    <i class="pi pi-times text-xl"></i>
+  </button>
+</div>
+
+<!-- Form -->
+<form (ngSubmit)="criarCliente()" class="space-y-6">
+  <!-- Nome -->
+  <div class="space-y-2">
+    <label for="nome" class="block text-sm font-medium text-gray-700">
+      Nome *
+    </label>
+    <input
+      id="nome"
+      type="text"
+      pInputText
+      [(ngModel)]="nome"
+      name="nome"
+      placeholder="Digite o nome do cliente"
+      class="w-full"
+      [disabled]="loading"
+      required
+    />
+  </div>
+
+  <!-- Email -->
+  <div class="space-y-2">
+    <label for="email" class="block text-sm font-medium text-gray-700">
+      Email *
+    </label>
+    <input
+      id="email"
+      type="email"
+      pInputText
+      [(ngModel)]="email"
+      name="email"
+      placeholder="Digite o email do cliente"
+      class="w-full"
+      [disabled]="loading"
+      required
+    />
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="p-message p-message-error">
+    <i class="pi pi-exclamation-triangle"></i>
+    <span>{{ errorMessage }}</span>
+  </div>
+
+  <!-- Buttons -->
+  <div class="flex justify-end space-x-3 pt-4">
+    <p-button
+      label="Cancelar"
+      icon="pi pi-times"
+      severity="secondary"
+      [disabled]="loading"
+      (onClick)="cancelar()"
+    />
+    <p-button
+      label="Criar Cliente"
+      icon="pi pi-check"
+      [loading]="loading"
+      [disabled]="!nome.trim() || !email.trim()"
+      type="submit"
+    />
+  </div>
+</form>
