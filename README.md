@@ -13,7 +13,7 @@ Antes de começar, certifique-se de ter instalado:
 
 ## 🏗️ Arquitetura
 
-```
+``` md
 📁 Projeto
 ├── 📁 boilerplate_back/     # API .NET Core
 │   ├── 📁 Api/              # Controllers e configuração
@@ -98,14 +98,14 @@ O frontend estará disponível em:
 
 ## 🛠️ Tecnologias Utilizadas
 
-### Backend
+### Backend Stack
 
 - **.NET 9.0** - Framework principal
 - **MongoDB** - Banco de dados NoSQL
 - **Swagger/OpenAPI** - Documentação da API
 - **Docker** - Containerização
 
-### Frontend
+### Frontend Stack
 
 - **Angular 18** - Framework SPA
 - **PrimeNG** - Componentes UI
@@ -199,6 +199,7 @@ docker-compose restart
 - Use os controles de paginação na parte inferior
 - Altere o número de itens por página (5, 10, 25, 50)
 - Navegue entre as páginas usando os botões
+  
 ---
 
 ## 🆘 Suporte
